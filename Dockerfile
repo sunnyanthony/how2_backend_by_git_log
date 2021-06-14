@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 COPY . .
 
 EXPOSE 1234
-CMD ["python", "manager.py"]
+CMD ["python", "src/socket_example.py"]
