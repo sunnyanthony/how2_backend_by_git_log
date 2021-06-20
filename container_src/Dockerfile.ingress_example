@@ -1,0 +1,8 @@
+FROM python:3
+
+COPY ./src/uwsgi_example.py ./main.py
+COPY ./requirements-ingress.txt ./requirements.txt
+RUN pip install -r requirements.txt
+
+EXPOSE 5449
+CMD ["uwsgi", "--http", ":5449", "--wsgi-file", "./main.py"]
