@@ -26,4 +26,4 @@ jobs:
         run: docker build .
 
       - name: uwsgi Build
-        run: docker --tag ingress_example -f ./container_src/Dockerfile.ingress_example .
+        run: docker build --tag ingress_example -f ./container_src/Dockerfile.ingress_example .
