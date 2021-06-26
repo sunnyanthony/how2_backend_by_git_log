@@ -1,0 +1,8 @@
+FROM python:3
+COPY uwsgi/ingress_example.ini ./my.ini
+COPY ./src/uwsgi_example.py ./main.py
+COPY ./requirements-ingress.txt ./requirements.txt
+RUN pip install -r requirements.txt
+
+EXPOSE 5449 1991
+CMD ["uwsgi", "./my.ini"]
