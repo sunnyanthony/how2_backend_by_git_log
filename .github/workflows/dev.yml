@@ -27,3 +27,6 @@ jobs:
 
       - name: uwsgi Build
         run: docker build --tag ingress_example -f ./container_src/Dockerfile.ingress_example .
+
+      - name: nginx Build
+        run: docker build --tag nginx_example -f ./container_src/Dockerfile.nginx_example .
