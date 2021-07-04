@@ -30,3 +30,6 @@ jobs:
 
       - name: nginx Build
         run: docker build --tag nginx_example -f ./container_src/Dockerfile.nginx_example .
+
+      - name: aiohttp Build
+        run: docker build --tag aiohttp_example -f ./container_src/Dockerfile.aiohttp_example .
