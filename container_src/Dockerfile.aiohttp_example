@@ -1,0 +1,16 @@
+FROM python:3
+
+# use apt to install
+RUN apt-get update;\
+    apt-get install -y curl
+
+WORKDIR /usr/src/app
+
+# install python module
+RUN pip install aiohttp
+RUN pip install gunicorn
+COPY src/aiohttp_example.py ./main.py
+
+EXPOSE 1234
+# if bind to localhost, it will bind to 127.0.0.1 and not expose to docker...
+CMD ["gunicorn", "main:start", "--bind", "0.0.0.0:1234", "--worker-class", "aiohttp.GunicornWebWorker"]
